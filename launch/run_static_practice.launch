@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="sinepub" name="static_transforms" type="static_tag_broadcast_node.py" output="screen"></node>
+</launch>

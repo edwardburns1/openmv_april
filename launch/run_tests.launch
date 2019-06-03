@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="sinepub" type="walker.py" name="walker_node" output="screen"> 
+	</node>
+</launch>

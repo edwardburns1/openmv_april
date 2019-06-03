@@ -1,0 +1,11 @@
+<launch>
+    <!--<arg name="load_configuration_svc" default="false"/>-->
+    <!-- Bring the Ros Bridge Online -->
+    <!--<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>-->
+    <!--<node pkg="tf" name="static_transform_broadcaster" type="static_transform_publisher" args="0 0 2 0 0 0 world april_3 10" output="screen"/>-->
+    <param name="yaml_static_file" value="$( find sinepub)/dummy.yaml"></param>
+    <node pkg="sinepub" name="static_tags" type="static_tag_broadcast_node.py"/>
+    <node pkg="sinepub" name="april" type="serial_port_node.py" output="screen"/>
+    <node pkg="rviz" name="viz" type="rviz" args=" $( find sinepub)/rviz/default.rviz"></node>
+    <!--<node if="$(arg load_configuration_svc)" pkg="capture_bot_executive" name="configuration_service" type="configuration_service.py" output="screen"/>-->
+</launch>
